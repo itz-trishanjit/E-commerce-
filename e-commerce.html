@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ShopMate - Your one-stop shop for electronics, fashion, home essentials, and more.">
+    <title>ShopMate - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #ff6f00;
+            padding: 15px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            color: #fff;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .nav .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav .menu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            position: relative;
+        }
+
+        .nav .menu a:hover::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #fff;
+        }
+
+        .search-bar {
+            flex: 1;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 25px;
+            border: 1px solid #ddd;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .user-actions button {
+            background-color: #f57c00;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin-left: 10px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .user-actions button:hover {
+            background-color: #e65100;
+        }
+
+        /* Hero Banner */
+        .hero-banner {
+            background-image: url('https://via.placeholder.com/1920x500');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 20px;
+            text-align: center;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        .hero-banner h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero-banner p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .hero-banner button {
+            background-color: #ff6f00;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 18px;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .hero-banner button:hover {
+            background-color: #e65100;
+        }
+
+        /* Main content */
+        main {
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .carousel, .categories, .products {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        }
+
+        .product-card, .category-card, .product-item {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .product-card img, .category-card img, .product-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 15px;
+        }
+
+        .product-card:hover, .category-card:hover, .product-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card h3, .category-card h3, .product-item h3 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .product-card p, .product-item p {
+            color: #ff6f00;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Filter Section */
+        .filter-bar {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .filter-bar select, .filter-bar input {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: #fff;
+            padding: 40px 20px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        .testimonials h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .testimonial-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-item img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .testimonial-item p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .testimonial-item span {
+            font-weight: bold;
+            color: #ff6f00;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background-color: #ffcc80;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+
+        .newsletter h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .newsletter input {
+            padding: 15px;
+            width: 300px;
+            border-radius: 30px;
+            border: 1px solid #ddd;
+            margin-right: 10px;
+        }
+
+        .newsletter button {
+            padding: 15px 30px;
+            background-color: #ff6f00;
+            border: none;
+            border-radius: 30px;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .newsletter button:hover {
+            background-color: #e65100;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #e65100;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #ffcc80;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer .social-icons {
+            margin-top: 20px;
+        }
+
+        footer .social-icons a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .search-bar {
+                margin-left: 0;
+                margin-right: 0;
+                margin-bottom: 10px;
+                width: 100%;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            .section-title {
+                font-size: 22px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-card, .category-card, .product-item {grid-template-columns: 1fr;
+            }
+
+            .testimonial-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .testimonial-item img {
+                margin-bottom: 10px;
+            }
+
+            .newsletter input {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav">
+            <div class="logo">ShopMate</div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for products...">
+            </div>
+            <div class="user-actions">
+                <button>Login</button>
+                <button>Cart (0)</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-banner">
+        <h1>Welcome to ShopMate</h1>
+        <p>Your one-stop shop for all your needs. Discover amazing deals and offers today!</p>
+        <button>Shop Now</button>
+    </section>
+
+    <main>
+        <!-- Product Filters -->
+        <section class="filter-bar">
+            <select>
+                <option value="all">All Categories</option>
+                <option value="electronics">Electronics</option>
+                <option value="fashion">Fashion</option>
+                <option value="home">Home Essentials</option>
+            </select>
+
+            <select>
+                <option value="default">Sort by Default</option>
+                <option value="low-high">Price: Low to High</option>
+                <option value="high-low">Price: High to Low</option>
+            </select>
+
+            <input type="text" placeholder="Search by name...">
+        </section>
+
+        <!-- Product Carousel -->
+        <section class="carousel">
+            <div class="product-card">
+                <img src="https://via.placeholder.com/180x180" alt="Product 1">
+                <h3>Product 1</h3>
+                <p>$19.99</p>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/180x180" alt="Product 2">
+                <h3>Product 2</h3>
+                <p>$29.99</p>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/180x180" alt="Product 3">
+                <h3>Product 3</h3>
+                <p>$39.99</p>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/180x180" alt="Product 4">
+                <h3>Product 4</h3>
+                <p>$49.99</p>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section>
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="categories">
+                <div class="category-card">
+                    <img src="https://via.placeholder.com/180x180" alt="Electronics">
+                    <h3>Electronics</h3>
+                </div>
+                <div class="category-card">
+                    <img src="https://via.placeholder.com/180x180" alt="Fashion">
+                    <h3>Fashion</h3>
+                </div>
+                <div class="category-card">
+                    <img src="https://via.placeholder.com/180x180" alt="Home Essentials">
+                    <h3>Home Essentials</h3>
+                </div>
+                <div class="category-card">
+                    <img src="https://via.placeholder.com/180x180" alt="Toys">
+                    <h3>Toys</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial-item">
+                <img src="https://via.placeholder.com/60x60" alt="Customer 1">
+                <p>"Great products and amazing customer service. Highly recommend!" <br><span>- Jane Doe</span></p>
+            </div>
+            <div class="testimonial-item">
+                <img src="https://via.placeholder.com/60x60" alt="Customer 2">
+                <p>"ShopMate is my go-to store for all my shopping needs." <br><span>- John Smith</span></p>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Stay updated with the latest deals and offers from ShopMate.</p>
+            <input type="email" placeholder="Enter your email">
+            <button>Subscribe</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 ShopMate. All rights reserved.</p>
+        <div>
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms of Service</a> |
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Example of a simple product search function
+        const searchInput = document.querySelector('.filter-bar input[type="text"]');
+        const products = document.querySelectorAll('.product-card');
+
+        searchInput.addEventListener('input', function () {
+            const searchTerm = searchInput.value.toLowerCase();
+            products.forEach(product => {
+                const productName = product.querySelector('h3').textContent.toLowerCase();
+                if (productName.includes(searchTerm)) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
