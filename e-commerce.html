@@ -10,7 +10,7 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #ff6f61;
+            background-color: #f3f3f3;
             color: #000;
         }
 
@@ -18,8 +18,6 @@
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-          border-radius: 50000px; 
-          
         }
 
         /* Header Styles */
@@ -32,7 +30,9 @@
             top: 0;
             left: 0;
             z-index: 1000;
-            transition: all 3s ease-in-out;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .sticky-header .logo a {
@@ -56,44 +56,48 @@
             font-size: 16px;
         }
 
+        .user-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .user-actions a {
+            color: #fff;
+            text-decoration: none;
+        }
+
         .hamburger-menu {
             display: none;
-            color: #000;
+            color: #fff;
             font-size: 24px;
             cursor: pointer;
         }
 
         /* Hero Banner Styles */
         .hero-banner {
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://source.unsplash.com/1600x900/?shopping') no-repeat center center/cover;
+            background: url('https://source.unsplash.com/1600x900/?shopping') no-repeat center center/cover;
             color: #fff;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
 
         .hero-banner .hero-content h1 {
             font-size: 48px;
             margin: 0;
-        }
-
-        .hero-banner .hero-content p {
-            font-size: 24px;
-            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .hero-banner .cta-button {
             padding: 15px 30px;
-            background-color: #000;
+            background-color: #ff6f61;
             color: #fff;
             border: none;
             cursor: pointer;
             font-size: 18px;
-            border-radius: 550px;
+            border-radius: 5px;
             transition: background-color 0.3s ease;
         }
 
@@ -120,11 +124,15 @@
             margin-bottom: 40px;
         }
 
-        .filters select, .filters button {
+        .filters select, .filters input[type="text"], .filters button {
             padding: 10px;
             font-size: 16px;
-            border: 5px solid #ccc;
-            border-radius: 35px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .filters input[type="text"] {
+            width: 200px;
         }
 
         /* Product Grid Styles */
@@ -136,10 +144,10 @@
 
         .product-card {
             background-color: #fff;
-            border-radius: 35px;
+            border-radius: 5px;
             overflow: hidden;
-            box-shadow: 2.0px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 1s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
         }
 
         .product-card img {
@@ -150,6 +158,7 @@
 
         .product-card .product-info {
             padding: 20px;
+            text-align: center;
         }
 
         .product-card .product-info h4 {
@@ -176,7 +185,7 @@
             background-color: #ff6f61;
             color: #fff;
             text-decoration: none;
-            border-radius: 35px;
+            border-radius: 5px;
             transition: background-color 0.3s ease;
         }
 
@@ -188,7 +197,6 @@
         .product-reviews {
             background-color: #f0f0f0;
             padding: 40px 0;
-          border-radius: 35px;
         }
 
         .product-reviews h3 {
@@ -208,7 +216,7 @@
             background-color: #fff;
             padding: 15px;
             margin-bottom: 20px;
-            border-radius: 35px;
+            border-radius: 5px;
             box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
         }
 
@@ -218,15 +226,15 @@
             text-align: left;
             background-color: #fff;
             padding: 20px;
-            border-radius:  35px;
-            box-shadow: 0 10px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
         }
 
         .product-reviews #review-form textarea, .product-reviews #review-form select {
             width: 100%;
             padding: 10px;
             margin-bottom: 15px;
-            border-radius: 35px;
+            border-radius: 5px;
             border: 1px solid #ccc;
             font-size: 16px;
         }
@@ -238,7 +246,7 @@
             padding: 10px 20px;
             cursor: pointer;
             font-size: 16px;
-            border-radius: 35px;
+            border-radius: 5px;
             transition: background-color 0.3s ease;
         }
 
@@ -246,7 +254,7 @@
             background-color: #ff3b2e;
         }
 
-        /* Shopping Cart Styles */
+        /* Shopping Cart/* Shopping Cart Styles */
         .shopping-cart {
             padding: 60px 0;
         }
@@ -267,7 +275,7 @@
             background-color: #fff;
             padding: 15px;
             margin-bottom: 20px;
-            border-radius: 35px;
+            border-radius: 5px;
             box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
             display: flex;
             justify-content: space-between;
@@ -282,7 +290,7 @@
         .shopping-cart .cart-item .item-info img {
             width: 80px;
             height: 80px;
-            border-radius: 35px;
+            border-radius: 5px;
             object-fit: cover;
         }
 
@@ -298,14 +306,30 @@
             font-size: 16px;
         }
 
+        .shopping-cart .cart-item .item-info .item-details input[type="number"] {
+            width: 50px;
+            padding: 5px;
+            font-size: 16px;
+            margin-right: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .shopping-cart .cart-item .remove-item {
+            color: #ff6f61;
+            cursor: pointer;
+            text-decoration: underline;
+            font-size: 16px;
+        }
+
         .shopping-cart .checkout-button {
-            background-color: #1007;
+            background-color: #ff6f61;
             color: #fff;
             border: none;
             padding: 15px 30px;
             font-size: 18px;
             cursor: pointer;
-            border-radius: 35px;
+            border-radius: 5px;
             display: block;
             margin: 20px auto 0;
             transition: background-color 0.3s ease;
@@ -318,10 +342,7 @@
         /* Footer Styles */
         footer {
             background-color: #333;
-            color: #fff;/* Footer Styles */
-        footer {
-            background-color: #333;
-            color: #ff6f62;
+            color: #fff;
             padding: 30px 0;
             text-align: center;
             margin-top: 40px;
@@ -329,7 +350,6 @@
 
         footer .social-icons {
             margin-bottom: 20px;
-          color: #000;
         }
 
         footer .social-icons a {
@@ -349,20 +369,63 @@
             font-size: 16px;
         }
 
+        footer .footer-links {
+            margin-top: 20px;
+        }
+
+        footer .footer-links a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        footer .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        footer .newsletter-signup {
+            margin-top: 20px;
+        }
+
+        footer .newsletter-signup input[type="email"] {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-right: 10px;
+            width: 200px;
+        }
+
+        footer .newsletter-signup button {
+            padding: 10px 20px;
+            background-color: #ff6f61;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        footer .newsletter-signup button:hover {
+            background-color: #ff3b2e;
+        }
+
         /* Media Queries */
         @media (max-width: 768px) {
             .hero-banner .hero-content h1 {
                 font-size: 36px;
             }
 
-            .hero-banner .hero-content p {
-                font-size: 18px;
+            .hero-banner .cta-button {
+                font-size: 16px;
+                padding: 10px 20px;
             }
 
             .filters {
                 flex-direction: column;
                 gap: 10px;
-              border-radius: 35px;
             }
 
             .shopping-cart .cart-item {
@@ -373,7 +436,6 @@
             .shopping-cart .cart-item .item-info {
                 flex-direction: column;
                 gap: 10px;
-              border-radius: 105px;
             }
 
             .hamburger-menu {
@@ -399,20 +461,20 @@
     <header class="sticky-header">
         <div class="container">
             <div class="logo">
-              <center>    <a href="#">ShopMate</a></center>
+                <a href="#">ShopMate</a>
             </div>
             <nav>
-              
                 <ul>
                     <li><a href="#products">Shop</a></li>
                     <li><a href="#reviews">Reviews</a></li>
                     <li><a href="#cart">Cart</a></li>
-                        <li><a href="#cart">about us</a></li>
-                        <li><a href="#cart">complain</a></li>
                 </ul>
-                
-                <div class="hamburger-menu"><i class="fas fa-bars"></i></div>
             </nav>
+            <div class="user-actions">
+                <a href="#" id="login">Login</a>
+                <a href="#" id="register">Register</a>
+            </div>
+            <div class="hamburger-menu"><i class="fas fa-bars"></i></div>
         </div>
     </header>
 
@@ -432,13 +494,19 @@
         <div class="container">
             <h2>Our Products</h2>
             <div class="filters">
+                <input type="text" id="search-bar" placeholder="Search for products...">
                 <select id="category-filter">
                     <option value="all">All Categories</option>
                     <option value="electronics">Electronics</option>
                     <option value="fashion">Fashion</option>
                     <option value="home">Home</option>
                 </select>
-                <button onclick="filterProducts()">find</button>
+                <select id="sort-filter">
+                    <option value="price-asc">Sort by Price: Low to High</option>
+                    <option value="price-desc">Sort by Price: High to Low</option>
+                    <option value="popularity">Sort by Popularity</option>
+                </select>
+                <button onclick="filterProducts()">Apply Filters</button>
             </div>
             <div class="grid" id="product-grid"></div>
         </div>
@@ -451,7 +519,7 @@
             <div id="reviews"></div>
             <div id="review-form">
                 <h4>Leave a Review</h4>
-                <textarea id="review-text" rows="6" column="5"placeholder="Write your review here........"></textarea>
+                <textarea id="review-text" rows="6" placeholder="Write your review here..."></textarea>
                 <select id="review-rating">
                     <option value="5">5 Stars</option>
                     <option value="4">4 Stars</option>
@@ -475,33 +543,42 @@
 
     <!-- Footer Section -->
     <footer>
+        <div class="social-icons<!-- Footer Section -->
+    <footer>
         <div class="social-icons">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
         <p>&copy; 2024 ShopMate. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="newsletter-signup">
+            <h4>Subscribe to our Newsletter</h4>
+            <input type="email" placeholder="Enter your email" />
+            <button>Subscribe</button>
+        </div>
     </footer>
 
     <!-- JavaScript Section -->
     <script>
         const products = [
-            { id: 1, name: 'Samsung galaxy s23 ultra', category: 'electronics', price: 299.99, image: 'IMG-20240617-WA0009.jpg' },
+            { id: 1, name: 'Samsung Galaxy S23 Ultra', category: 'electronics', price: 299.99, image: 'IMG-20240617-WA0009.jpg' },
             { id: 2, name: 'GTX RTX 1080ti', category: 'electronics', price: 99.99, image: '633af0f922c385029b4db387-msi-geforce-gtx-1050-ti-gaming-graphics.jpg' },
-            { id: 3, name: 'Boat lunarCall', category: 'fashion', price: 199.99, image: 'LunarCall_1_800x.png' },
+            { id: 3, name: 'Boat LunarCall', category: 'fashion', price: 199.99, image: 'LunarCall_1_800x.png' },
             { id: 4, name: 'Sofa', category: 'home', price: 499.99, image: 'luxury-blue-comfort-sofa-png-isolated-transparent-background_191095-9792.jpg' },
             { id: 5, name: 'Jacket', category: 'fashion', price: 149.99, image: 'https://source.unsplash.com/250x200/?jacket' },
             { id: 6, name: 'Laptop', category: 'electronics', price: 799.99, image: 'notebook-g16-7630-nt-black-gallery-1.jpg' },
-            { id: 7, name: 'chimnee', category: 'home', price: 79.99, image: 'ProductImage_a6c5803d-c2f6-4743-96bc-e7984e3b85aa_1080x1080.jpg' },
+            { id: 7, name: 'Chimnee', category: 'home', price: 79.99, image: 'ProductImage_a6c5803d-c2f6-4743-96bc-e7984e3b85aa_1080x1080.jpg' },
             { id: 8, name: 'Shoes', category: 'fashion', price: 129.99, image: 'Samba_OG_Shoes_White_B75806_01_standard.jpg' }
         ];
 
         let cart = [];
 
-        function scrollToProducts() {
-            document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
-        }
-
+        // Function to display products in the grid
         function displayProducts(productsToDisplay) {
             const productGrid = document.getElementById('product-grid');
             productGrid.innerHTML = '';
@@ -521,12 +598,27 @@
             });
         }
 
+        // Function to filter products
         function filterProducts() {
             const selectedCategory = document.getElementById('category-filter').value;
-            const filteredProducts = selectedCategory === 'all' ? products : products.filter(product => product.category === selectedCategory);
+            const searchQuery = document.getElementById('search-bar').value.toLowerCase();
+            const sortOption = document.getElementById('sort-filter').value;
+
+            let filteredProducts = products.filter(product => 
+                (selectedCategory === 'all' || product.category === selectedCategory) &&
+                product.name.toLowerCase().includes(searchQuery)
+            );
+
+            if (sortOption === 'price-asc') {
+                filteredProducts.sort((a, b) => a.price - b.price);
+            } else if (sortOption === 'price-desc') {
+                filteredProducts.sort((a, b) => b.price - a.price);
+            }
+
             displayProducts(filteredProducts);
         }
 
+        // Function to add a product to the cart
         function addToCart(productId) {
             const product = products.find(product => product.id === productId);
             const cartItem = cart.find(item => item.id === productId);
@@ -540,6 +632,7 @@
             displayCartItems();
         }
 
+        // Function to display cart items
         function displayCartItems() {
             const cartItemsContainer = document.getElementById('cart-items');
             cartItemsContainer.innerHTML = '';
@@ -548,6 +641,8 @@
                 cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
                 return;
             }
+
+            let total = 0;
 
             cart.forEach(item => {
                 const cartItem = document.createElement('div');
@@ -558,14 +653,37 @@
                         <div class="item-details">
                             <h4>${item.name}</h4>
                             <p>Price: $${item.price.toFixed(2)}</p>
-                            <p>Quantity: ${item.quantity}</p>
+                            <input type="number" value="${item.quantity}" min="1" onchange="updateCartItemQuantity(${item.id}, this.value)">
+                            <p>Total: $${(item.price * item.quantity).toFixed(2)}</p>
                         </div>
                     </div>
+                    <span class="remove-item" onclick="removeFromCart(${item.id})">Remove</span>
                 `;
                 cartItemsContainer.appendChild(cartItem);
+
+                total += item.price * item.quantity;
             });
+
+            const totalElement = document.createElement('div');
+            totalElement.innerHTML = `<h3>Total: $${total.toFixed(2)}</h3>`;
+            cartItemsContainer.appendChild(totalElement);
         }
 
+        // Function to update cart item quantity
+        function updateCartItemQuantity(productId, quantity) {
+            const cartItem = cart.find(item => item.id === productId);
+            cartItem.quantity = parseInt(quantity);
+
+            displayCartItems();
+        }
+
+        // Function to remove a product from the cart
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            displayCartItems();
+        }
+
+        // Function to proceed to checkout
         function checkout() {
             if (cart.length === 0) {
                 alert('Your cart is empty!');
@@ -579,6 +697,7 @@
             displayCartItems();
         }
 
+        // Function to add a review
         function addReview() {
             const reviewText = document.getElementById('review-text').value;
             const reviewRating = document.getElementById('review-rating').value;
@@ -597,64 +716,27 @@
             `;
             reviewSection.appendChild(reviewElement);
 
-            // Clear the input fields after submission
             document.getElementById('review-text').value = '';
             document.getElementById('review-rating').value = '5';
         }
-
-        // Initialize product display and cart items
-        displayProducts(products);
-        displayCartItems();
 
         // Mobile menu toggle
         document.querySelector('.hamburger-menu').addEventListener('click', function() {
             document.querySelector('.sticky-header nav ul').classList.toggle('active');
         });
-<!-- ... (rest of the HTML code remains the same) ... -->
 
+        // Initialize product display and cart items
+        displayProducts(products);
+        displayCartItems();
 
-  // ... (rest of the JavaScript code remains the same) ...
+        // Login and Register Modal Logic (Placeholder)
+        document.getElementById('login').addEventListener('click', function() {
+            alert('Login form placeholder');
+        });
 
-  function placeOrder(total, userDetails) {
-    // Simulate order placement process
-    setTimeout(() => {
-      alert(`Thank you, ${userDetails.name}! Your order has been placed successfully. Total: $${total.toFixed(2)}`);
-
-      // Generate Excel file
-      const excelData = [
-        ['Order Details'],
-        ['Name', userDetails.name],
-        ['Email', userDetails.email],
-        ['Phone', userDetails.phone],
-        ['Total', total.toFixed(2)],
-        ['Order Items'],
-      ];
-
-      cart.forEach((item, index) => {
-        excelData.push([
-          index + 1,
-          item.name,
-          item.price.toFixed(2),
-          item.quantity,
-        ]);
-      });
-
-      const worksheet = XLSX.utils.aoa_to_sheet(excelData);
-      const workbook = XLSX.utils.book_new();
-      XLSX.utils.book_append_sheet(workbook, worksheet, 'Order');
-
-      // Prompt user to download Excel file
-      const excelFile = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
-      const blob = new Blob([excelFile], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'order_details.xlsx';
-      a.click();
-
-      resetCart();
-    }, 2000); // simulate a 0.5-second delay
-  }
+        document.getElementById('register').addEventListener('click', function() {
+            alert('Register form placeholder');
+        });
 
     </script>
 </body>
