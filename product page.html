@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff9b9b, #d597f2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .product-page {
+            display: flex;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .product-details {
+            max-width: 400px;
+            margin-left: 30px;
+        }
+
+        .product-details h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .price {
+            font-size: 1.5em;
+            color: #d63447; /* Darker pink for the price */
+            margin-bottom: 15px;
+        }
+
+        .description {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .rating {
+            margin-bottom: 15px;
+        }
+
+        .rating span {
+            font-size: 1.2em;
+            color: #FFD700;
+        }
+
+        #add-to-cart {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #d63447; /* Darker pink for the button */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #add-to-cart:hover {
+            background-color: #b02339; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="product-page">
+        <div class="product-image">
+            <img src="https://via.placeholder.com/350" alt="Product Image">
+        </div>
+        <div class="product-details">
+            <h1>ASUS TUF Gaming Laptop</h1>
+            <p class="price">$1,200.00</p>
+            <p class="description">Experience powerful gaming and multitasking with the ASUS TUF Gaming laptop, featuring an Intel Core i7 processor, 16GB RAM, and NVIDIA GTX 1660 Ti graphics.</p>
+            <div class="rating">
+                <span>★★★★☆</span>
+                <p>(120 reviews)</p>
+            </div>
+            <button id="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("add-to-cart").addEventListener("click", function() {
+            alert("Product added to cart!");
+        });
+    </script>
+</body>
+</html>

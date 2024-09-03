@@ -3,27 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShopMate - Your One-Stop Online Shop</title>
+    <title>ShopMate </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         /* General Styles */
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f3f3f3;
-            color: #000;
-        }
+    background: linear-gradient(to right, pink,violet);
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
 
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
+          color: #000;
+          border-radius: 35px;
         }
 
         /* Header Styles */
         .sticky-header {
             background-color: #333;
-            color: #fff;
+            color: #black;
             padding: 15px 0;
             position: fixed;
             width: 100%;
@@ -33,6 +34,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+          border-radius: 7px;
         }
 
         .sticky-header .logo a {
@@ -71,6 +73,7 @@
             color: #fff;
             font-size: 24px;
             cursor: pointer;
+          border-radius: 65px;
         }
 
         /* Hero Banner Styles */
@@ -87,7 +90,7 @@
         .hero-banner .hero-content h1 {
             font-size: 48px;
             margin: 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 4px rgba(3,0,0,0.5);
         }
 
         .hero-banner .cta-button {
@@ -97,12 +100,12 @@
             border: none;
             cursor: pointer;
             font-size: 18px;
-            border-radius: 5px;
+            border-radius: 35px;
             transition: background-color 0.3s ease;
         }
 
         .hero-banner .cta-button:hover {
-            background-color: #ff3b2e;
+            background-color: #000;
         }
 
         /* Product Filter Styles */
@@ -144,7 +147,7 @@
 
         .product-card {
             background-color: #fff;
-            border-radius: 5px;
+            border-radius: 25px;
             overflow: hidden;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
@@ -185,7 +188,7 @@
             background-color: #ff6f61;
             color: #fff;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 35px;
             transition: background-color 0.3s ease;
         }
 
@@ -234,7 +237,7 @@
             width: 100%;
             padding: 10px;
             margin-bottom: 15px;
-            border-radius: 5px;
+            border-radius: 35px;
             border: 1px solid #ccc;
             font-size: 16px;
         }
@@ -246,7 +249,7 @@
             padding: 10px 20px;
             cursor: pointer;
             font-size: 16px;
-            border-radius: 5px;
+            border-radius: 35px;
             transition: background-color 0.3s ease;
         }
 
@@ -275,7 +278,7 @@
             background-color: #fff;
             padding: 15px;
             margin-bottom: 20px;
-            border-radius: 5px;
+            border-radius: 35px;
             box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
             display: flex;
             justify-content: space-between;
@@ -290,7 +293,7 @@
         .shopping-cart .cart-item .item-info img {
             width: 80px;
             height: 80px;
-            border-radius: 5px;
+            border-radius: 35px;
             object-fit: cover;
         }
 
@@ -311,7 +314,7 @@
             padding: 5px;
             font-size: 16px;
             margin-right: 10px;
-            border-radius: 5px;
+            border-radius: 35px;
             border: 1px solid #ccc;
         }
 
@@ -329,7 +332,7 @@
             padding: 15px 30px;
             font-size: 18px;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 35px;
             display: block;
             margin: 20px auto 0;
             transition: background-color 0.3s ease;
@@ -391,7 +394,7 @@
         footer .newsletter-signup input[type="email"] {
             padding: 10px;
             font-size: 16px;
-            border-radius: 5px;
+            border-radius: 35px;
             border: 1px solid #ccc;
             margin-right: 10px;
             width: 200px;
@@ -404,7 +407,7 @@
             border: none;
             cursor: pointer;
             font-size: 16px;
-            border-radius: 5px;
+            border-radius: 35px;
             transition: background-color 0.3s ease;
         }
 
@@ -471,7 +474,9 @@
                 </ul>
             </nav>
             <div class="user-actions">
+              <br>
                 <a href="#" id="login">Login</a>
+              <br>
                 <a href="#" id="register">Register</a>
             </div>
             <div class="hamburger-menu"><i class="fas fa-bars"></i></div>
@@ -479,6 +484,7 @@
     </header>
 
     <!-- Hero Banner Section -->
+    <hr size=10 color="black">
     <section class="hero-banner">
         <div class="container">
             <div class="hero-content">
@@ -488,6 +494,7 @@
             </div>
         </div>
     </section>
+  <hr size=10 color="black">
 
     <!-- Product Filter Section -->
     <section class="product-filter" id="products">
@@ -570,7 +577,7 @@
             { id: 2, name: 'GTX RTX 1080ti', category: 'electronics', price: 99.99, image: '633af0f922c385029b4db387-msi-geforce-gtx-1050-ti-gaming-graphics.jpg' },
             { id: 3, name: 'Boat LunarCall', category: 'fashion', price: 199.99, image: 'LunarCall_1_800x.png' },
             { id: 4, name: 'Sofa', category: 'home', price: 499.99, image: 'luxury-blue-comfort-sofa-png-isolated-transparent-background_191095-9792.jpg' },
-            { id: 5, name: 'Jacket', category: 'fashion', price: 149.99, image: 'https://source.unsplash.com/250x200/?jacket' },
+            { id: 5, name: 'Jacket', category: 'fashion', price: 149.99, image: 'Jacket.jpg' },
             { id: 6, name: 'Laptop', category: 'electronics', price: 799.99, image: 'notebook-g16-7630-nt-black-gallery-1.jpg' },
             { id: 7, name: 'Chimnee', category: 'home', price: 79.99, image: 'ProductImage_a6c5803d-c2f6-4743-96bc-e7984e3b85aa_1080x1080.jpg' },
             { id: 8, name: 'Shoes', category: 'fashion', price: 129.99, image: 'Samba_OG_Shoes_White_B75806_01_standard.jpg' }
